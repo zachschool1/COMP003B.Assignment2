@@ -27,7 +27,10 @@ namespace COMP003B.Assignment2
             }
 
             app.UseHttpsRedirection();
+          
             app.UseStaticFiles();
+
+            app.UseMiddleware<COMP003B.Assignment2.Middleware.RequestLoggingMiddleware>();
             app.UseWelcomePage("/welcome");
 
             app.UseRouting();
